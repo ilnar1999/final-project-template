@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-  @GetMapping("/")
-  public String login(Authentication authentication, Model model) {
-    Message greetingMessage = new Message();
-    greetingMessage.setMessage(ENG_GREETING + authentication.getName());
+    @GetMapping("/")
+    public String index(Authentication authentication, Model model) {
+        Message greetingMessage = new Message();
+        greetingMessage.setMessage("User: " + authentication.getName());
 
-    model.addAttribute("message", greetingMessage.getMessage());
-    return "index";
-  }
+        model.addAttribute("message", greetingMessage.getMessage());
+        return "index";
+    }
 
 }

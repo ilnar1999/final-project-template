@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="cp1251" %>
 
 <html>
-  <head>
-    <meta charset="UTF-8">
+<head>
     <title>Sign up</title>
-  </head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" contentType="text/css" href="${contextPath}/resources/css/style.css">
+    <link rel="stylesheet" contentType="text/css" href="/resources/css/data-entry-form-style.css" >
+</head>
 
-  <body>
-    <form action="login/process" method="post">
-      <p title="Login form">Sign up</p>
-      <div class="group">
-        <label for="">Login</label>
-        <input name="login" />
-      </div>
+<body>
 
-      <div class="group">
-        <label for="">Password</label>
-        <input name="password" type="password" />
-        <div class="error">${error_login_placeholder}</div>
-      </div>
+<header>
+    <h1>АВТОСАЛОН</h1>
+</header>
 
+<section>
+    <article>
+        <form class="data-entry-form" action="/login" method="post">
+            <h3>Авторизация</h3>
+            <hr>
+            <div class="area">
+                <label>Логин:</label><br>
+                <input class="text-box" size="18" required><br>
+            </div>
+            <div class="area">
+                <label>Пароль:</label><br>
+                <input class="text-box" type="password" class="text" required><br>
+            </div>
+            <div class="area">
+                <input type="submit" class="button left-button" value="Войти">
+                <a href="/registration"><input type="button" class="button" value="Регистрация"></a>
+            </div>
+        </form>
+    </article>
+</section>
 
-      <div class="group">
-        <button class="button">Confirm</button>
-      </div>
-    </form>
+<footer>
+    <p>Powered by <i>Ilnar Khafizov</i> | 2020 | <i>Izhevsk, Russia</i></p>
+</footer>
 
-    <form action="registration" method="get">
-      <div>
-        <button class="button">registration</button>
-      </div>
-    </form>
-
-  </body>
+</body>
 </html>
