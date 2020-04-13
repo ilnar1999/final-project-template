@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>
-        ${message}!
+        Hello
     </p>
 
     <form action="logout">

@@ -1,6 +1,7 @@
 package com.epam.rd.izh.service;
 
 import com.epam.rd.izh.entity.AuthorizedUser;
+import com.epam.rd.izh.entity.Role;
 import com.epam.rd.izh.repository.UserRepository;
 
 import java.util.HashSet;
@@ -26,30 +27,21 @@ public class UserDetailsServiceMapper implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    /**
-     * Данный метод должен вернуть объект User, являющийся пользователем текущей сессии.
-     * Реализация данного метода включает маппинг, т.е. преобразование бизнес-объекта AuthorizedUser в
-     * системный объект Spring приложения User.
-     * <p>
-     * Рекомендуется внедрить логику, реагирующую на возможные нуллы в методах-геттерах.
-     * Пример хорошего кода - логирование или выброс исключения, если наполнение поля объекта критично
-     * (например отсутствует роль пользователя).
-     */
-
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
-        AuthorizedUser authorizedUserDto = userRepository.getAuthorizedUserByLogin(login);
+        AuthorizedUser user = userRepository.findByLogin(login);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
         Set<GrantedAuthority> roles = new HashSet<>();
-        if (authorizedUserDto != null) {
-            for (String role : authorizedUserDto.getRoles()) {
-                roles.add(new SimpleGrantedAuthority(role));
-            }
+        for (Role role : user.getRoles()) {
+            roles.add(new SimpleGrantedAuthority(role.getName()));
         }
 
         return new User(
-                authorizedUserDto.getLogin(),
-                authorizedUserDto.getPassword(),
+                user.getLogin(),
+                user.getPassword(),
                 roles
         );
     }

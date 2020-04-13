@@ -17,22 +17,31 @@
 
 <section>
     <article>
-        <form class="data-entry-form" action="/login" method="post">
+
+        <form class="data-entry-form" action="/login/process" method="post">
+
             <h3>Авторизация</h3>
             <hr>
+
+            <div class="error">${error_login_placeholder}</div>
+
             <div class="area">
                 <label>Логин:</label><br>
-                <input class="text-box" size="18" required><br>
+                <input name="login" class="text-box" size="18" required><br>
             </div>
+
             <div class="area">
                 <label>Пароль:</label><br>
-                <input class="text-box" type="password" class="text" required><br>
+                <input name="password" class="text-box" type="password" class="text" required><br>
             </div>
+
             <div class="area">
                 <input type="submit" class="button left-button" value="Войти">
                 <a href="/registration"><input type="button" class="button" value="Регистрация"></a>
             </div>
+
         </form>
+
     </article>
 </section>
 

@@ -12,8 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -36,17 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/registration/**").permitAll()
 
-                /**
-                 * Открытие доступа к ресурсным пакетам:
-                 * /webapp/css
-                 * /webapp/js
-                 * /webapp/images
-                 * /webapp/fonts
-                 */
-//                .antMatchers("/css/**").permitAll()
-//                .antMatchers("/js/**").permitAll()
-//                .antMatchers("/images/**").permitAll()
-//                .antMatchers("/fonts/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
 
                 /**
