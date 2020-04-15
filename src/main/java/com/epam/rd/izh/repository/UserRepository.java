@@ -2,15 +2,16 @@ package com.epam.rd.izh.repository;
 
 import com.epam.rd.izh.entity.AuthorizedUser;
 
-import com.epam.rd.izh.entity.Role;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<AuthorizedUser, Long> {
+public class UserRepository {
 
-    AuthorizedUser findByLogin(String login);
+    public boolean saveUser(AuthorizedUser user) { // TODO
+        return false;
+    }
 
-    boolean deleteByLogin(String login);
-
+    public AuthorizedUser getUserByLogin(String login) { // TODO
+        return null;
+    }
 }

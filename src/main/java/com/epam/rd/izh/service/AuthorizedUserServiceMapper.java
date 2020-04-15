@@ -2,6 +2,7 @@ package com.epam.rd.izh.service;
 
 import com.epam.rd.izh.dto.RegisteredUser;
 import com.epam.rd.izh.entity.AuthorizedUser;
+import com.epam.rd.izh.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,6 @@ public class AuthorizedUserServiceMapper {
                 .dateOfBirthday(LocalDate.parse(registeredUser.getDateOfBirthday()))
                 .login(registeredUser.getLogin())
                 .password(encoder.encode(registeredUser.getPassword()))
-                .roles(roleService.getRoleByName("USER"));
+                .roles(roleService.getAllRolesByNames("User"));
     }
 }

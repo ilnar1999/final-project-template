@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Регистрация</title>
+    <link rel="shortcut icon" href="/resources/images/logo.png">
     <link rel="stylesheet" contentType="text/css" href="/resources/css/style.css" >
     <link rel="stylesheet" contentType="text/css" href="/resources/css/data-entry-form-style.css" >
 </head>

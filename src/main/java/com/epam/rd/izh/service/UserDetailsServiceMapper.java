@@ -16,11 +16,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-/**
- * Для авторизации через Spring security требуется реализация интерфейса UserDetailsService и его метода
- * .loadUserByUsername(String login).
- */
-
 @Service
 public class UserDetailsServiceMapper implements UserDetailsService {
 
@@ -30,10 +25,11 @@ public class UserDetailsServiceMapper implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 
-        AuthorizedUser user = userRepository.findByLogin(login);
+        AuthorizedUser user = userRepository.getUserByLogin(login);
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
+
         Set<GrantedAuthority> roles = new HashSet<>();
         for (Role role : user.getRoles()) {
             roles.add(new SimpleGrantedAuthority(role.getName()));

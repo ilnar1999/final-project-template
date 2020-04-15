@@ -2,21 +2,45 @@ package com.epam.rd.izh.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
-@Entity
-@Table(name = "t_cars")
 public class Car {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
-    @Column(length = 30)
     private String brand;
-    @Column(length = 30)
     private String model;
     private BigDecimal price;
-    @ManyToOne
     private Category category;
+    private byte[] image;
+
+    public Car id(Long id) {
+        this.setId(id);
+        return this;
+    }
+
+    public Car brand(String brand) {
+        this.setBrand(brand);
+        return this;
+    }
+
+    public Car model(String model) {
+        this.setModel(model);
+        return this;
+    }
+
+    public Car price(BigDecimal price) {
+        this.setPrice(price);
+        return this;
+    }
+
+    public Car category(Category category) {
+        this.setCategory(category);
+        return this;
+    }
+
+    public Car image(byte[] image) {
+        this.setImage(image);
+        return this;
+    }
 }

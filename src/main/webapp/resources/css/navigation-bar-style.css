@@ -1,4 +1,4 @@
-ul.nav {
+.nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,27 +7,27 @@ ul.nav {
     font-size: 25px;
 }
 
-ul.nav li {
+.nav li {
     float: left;
 }
 
-ul.nav li.right {
+.nav li.right {
     float: right;
 }
 
-ul.nav a {
+.nav a {
     display: block;
     color: white;
     text-align: center;
-    padding: 15px 15px;
+    padding: 15px 12px;
     text-decoration: none;
 }
 
-ul.nav a:hover {
+.nav a:hover {
     background-color: #111;
 }
 
-ul.right li {
+.nav li.right {
     float: right;
 }
 

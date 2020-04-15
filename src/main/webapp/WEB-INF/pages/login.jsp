@@ -5,6 +5,7 @@
 <head>
     <title>Sign up</title>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/resources/images/logo.png">
     <link rel="stylesheet" contentType="text/css" href="${contextPath}/resources/css/style.css">
     <link rel="stylesheet" contentType="text/css" href="/resources/css/data-entry-form-style.css" >
 </head>

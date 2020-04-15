@@ -11,26 +11,11 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public boolean saveUser(AuthorizedUser user) {
-        if (user != null && !existsUser(user)) {
-            userRepository.save(user);
-            return true;
-        }
+    public boolean saveUser(AuthorizedUser user) { // TODO
         return false;
     }
 
-    public AuthorizedUser findUserByLogin(String login) {
-        return userRepository.findByLogin(login);
-    }
-
-    public boolean deleteUserByLogin(String login) {
-        return userRepository.deleteByLogin(login);
-    }
-
-    private boolean existsUser(AuthorizedUser user) {
-        if (user == null || findUserByLogin(user.getLogin()) == null) {
-            return false;
-        }
-        return findUserByLogin(user.getLogin()).equals(user);
+    public AuthorizedUser getUserByLogin(String login) {
+        return userRepository.getUserByLogin(login);
     }
 }
