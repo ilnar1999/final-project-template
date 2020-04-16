@@ -5,7 +5,7 @@ import com.epam.rd.izh.dto.RegisteredUser;
 import javax.validation.Valid;
 
 import com.epam.rd.izh.service.AuthorizedUserServiceMapper;
-import com.epam.rd.izh.service.UserService;
+import com.epam.rd.izh.service.AuthorizedUserService;
 import com.epam.rd.izh.validation.RegisteredUserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class AuthenticationController {
 
     @Autowired
-    UserService userService;
+    AuthorizedUserService userService;
     @Autowired
     AuthorizedUserServiceMapper mapper;
     @Autowired

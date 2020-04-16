@@ -1,7 +1,7 @@
 package com.epam.rd.izh.validation;
 
 import com.epam.rd.izh.dto.RegisteredUser;
-import com.epam.rd.izh.service.UserService;
+import com.epam.rd.izh.service.AuthorizedUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
@@ -11,11 +11,11 @@ import org.springframework.validation.ObjectError;
 public class RegisteredUserValidator {
 
     @Autowired
-    UserService userService;
+    AuthorizedUserService userService;
 
     public void validate(RegisteredUser registeredUser, BindingResult bindingResult) {
 
-        if (userService.findUserByLogin(registeredUser.getLogin()) != null) {
+        if (userService.getUserByLogin(registeredUser.getLogin()) != null) {
             bindingResult.addError(new ObjectError("error_login_placeholder", "Пользователь с таким логином уже существует"));
         }
         if (!registeredUser.getPassword().equals(registeredUser.getPasswordConfirm())) {

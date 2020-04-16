@@ -5,7 +5,7 @@ import com.epam.rd.izh.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class RoleService {
@@ -13,11 +13,11 @@ public class RoleService {
     @Autowired
     RoleRepository roleRepository;
 
-    public Set<Role> getAllRolesByNames(String... names) {
+    public List<Role> getAllRolesByNames(String... names) {
         return roleRepository.getAllRolesByNames(names);
     }
 
-    public Set<Role> getAllRolesByUserId(Long id) {
+    public List<Role> getAllRolesByUserId(Long id) {
         return roleRepository.getAllRolesByUserId(id);
     }
 }

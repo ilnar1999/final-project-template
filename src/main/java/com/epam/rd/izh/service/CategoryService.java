@@ -5,7 +5,7 @@ import com.epam.rd.izh.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class CategoryService {
@@ -13,7 +13,7 @@ public class CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
 
-    public Set<Category> getAllCategories() {
+    public List<Category> getAllCategories() {
         return categoryRepository.getAllCategories();
     }
 

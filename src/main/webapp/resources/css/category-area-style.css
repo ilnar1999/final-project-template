@@ -1,9 +1,38 @@
 div.category-area {
     background-color: #ddd;
     box-shadow: 0px 0px 3px gray;
-    width: 924px;
-    padding: 10px;
-    margin: 30px;
+    width: 860px;
+    margin: 50px;
+    padding: 20px;
     border-radius: 10px;
     font-size: 20px;
+}
+
+div.category-area h3 {
+    margin-top: 0px;
+    text-align: center;
+    color: #333;
+}
+
+div.category-area hr {
+    margin: 20px 0px;
+}
+
+div.category-area a {
+    text-decoration: none;
+    font-size: 0px;
+}
+
+div.category-area img.car-img {
+    width: 274px;
+    height: 154.13px;
+    box-shadow: 1px 1px 4px gray;
+    border: 1px solid gray;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+div.category-area a {
+    text-decoration: none;
+    font-size: 0px;
 }

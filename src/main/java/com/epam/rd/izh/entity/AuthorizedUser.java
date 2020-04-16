@@ -2,6 +2,8 @@ package com.epam.rd.izh.entity;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -39,8 +41,8 @@ public class AuthorizedUser {
         return this;
     }
 
-    public AuthorizedUser roles(Set<Role> roles) {
-        this.roles = roles;
+    public AuthorizedUser roles(Collection<Role> roles) {
+        this.roles = new HashSet<>(roles);
         return this;
     }
 }

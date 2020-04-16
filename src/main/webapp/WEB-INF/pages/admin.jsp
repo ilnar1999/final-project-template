@@ -23,31 +23,10 @@
             <li><a href="/admin">Пользователи</a></li>
             <li><a href="#">О нас</a></li>
             <li class="right"><a href="/logout"><img class="nav" src="/resources/images/log_out.png"> Выйти</a></li>
-            <li class="right"><p>${authorized_user_name}</p></li>
         </ul>
     </nav>
 
     <article>
-
-        <div class="category-area">
-            <h3>Тестовая категория</h3>
-            <hr>
-
-            <a href="##">
-                <img class="car-img" src="/resources/images/add-car.png" alt="Добавить автомобиль"/>
-            </a>
-
-        </div>
-
-        <c:forEach items="${categories}" var="category">
-            <h3>${category.name}</h3>
-            <hr>
-            <c:forEach items="categories.cars" var="car">
-
-            </c:forEach>
-        </c:forEach>
-
-        <p>Добавить новую категорию</p>
 
     </article>
 

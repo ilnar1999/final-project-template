@@ -1,17 +1,20 @@
 package com.epam.rd.izh.service;
 
 import com.epam.rd.izh.entity.AuthorizedUser;
-import com.epam.rd.izh.repository.UserRepository;
+import com.epam.rd.izh.repository.AuthorizedUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class AuthorizedUserService {
 
     @Autowired
-    UserRepository userRepository;
+    AuthorizedUserRepository userRepository;
 
-    public boolean saveUser(AuthorizedUser user) { // TODO
+    public boolean saveUser(AuthorizedUser user) {
+        if (userRepository.getUserByLogin(user.getLogin()) == null) {
+            return userRepository.saveUser(user);
+        }
         return false;
     }
 

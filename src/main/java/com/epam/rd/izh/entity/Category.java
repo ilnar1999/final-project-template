@@ -2,6 +2,7 @@ package com.epam.rd.izh.entity;
 
 import lombok.Data;
 
+import java.util.Collection;
 import java.util.Set;
 
 @Data
@@ -21,8 +22,8 @@ public class Category {
         return this;
     }
 
-    public Category cars(Set<Car> cars) {
-        this.cars = cars;
+    public Category cars(Collection<Car> cars) {
+        this.cars = (Set<Car>) cars;
         return this;
     }
 }

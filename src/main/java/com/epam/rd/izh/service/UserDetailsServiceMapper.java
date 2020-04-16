@@ -2,7 +2,7 @@ package com.epam.rd.izh.service;
 
 import com.epam.rd.izh.entity.AuthorizedUser;
 import com.epam.rd.izh.entity.Role;
-import com.epam.rd.izh.repository.UserRepository;
+import com.epam.rd.izh.repository.AuthorizedUserRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceMapper implements UserDetailsService {
 
     @Autowired
-    UserRepository userRepository;
+    AuthorizedUserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
