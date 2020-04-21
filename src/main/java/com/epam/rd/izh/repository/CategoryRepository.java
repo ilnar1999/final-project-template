@@ -21,6 +21,26 @@ public class CategoryRepository {
     }
 
     public Category getCategoryById(Long id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM t_categories WHERE id = ? LIMIT 1", categoryMapper, id);
+        List<Category> categories = jdbcTemplate.query("SELECT * FROM t_categories WHERE id = ? LIMIT 1", categoryMapper, id);
+        if (categories.isEmpty()) {
+            return null;
+        }
+        return categories.get(0);
+    }
+
+    public Category getCategoryByName(String name) {
+        List<Category> categories = jdbcTemplate.query("SELECT * FROM t_categories WHERE name = ? LIMIT 1", categoryMapper, name);
+        if (categories.isEmpty()) {
+            return null;
+        }
+        return categories.get(0);
+    }
+
+    public boolean saveCategoryByName(String name) {
+        return jdbcTemplate.update("INSERT INTO t_categories(name) VALUES (?)", name) > 0;
+    }
+
+    public boolean deleteCategoryById(Long id) {
+        return jdbcTemplate.update("DELETE FROM t_categories WHERE id = ?", id) > 0;
     }
 }

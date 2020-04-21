@@ -1,28 +1,28 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="cp1251" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <title>РџРѕР»СЊР·РѕРІР°С‚РµР»Рё</title>
+    <meta charset="UTF-8">
     <link rel="shortcut icon" href="/resources/images/logo.png">
     <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" href="/resources/css/navigation-bar-style.css">
-    <link rel="stylesheet" href="/resources/css/category-area-style.css">
-    <title>Каталог</title>
 </head>
 <body>
 
 <header>
-    <h1>АВТОСАЛОН</h1>
+    <h1>РђР’РўРћРЎРђР›РћРќ</h1>
 </header>
 
 <section>
 
     <nav class="nav">
         <ul>
-            <li><a href="/">Каталог</a></li>
-            <li><a href="/admin">Пользователи</a></li>
-            <li><a href="#">О нас</a></li>
-            <li class="right"><a href="/logout"><img class="nav" src="/resources/images/log_out.png"> Выйти</a></li>
+            <li><a href="/">РљР°С‚Р°Р»РѕРі</a></li>
+            <li><a href="/admin">РџРѕР»СЊР·РѕРІР°С‚РµР»Рё</a></li>
+            <li><a href="">Рћ РЅР°СЃ</a></li>
+            <li class="right"><a href="/logout"><img class="nav" src="/resources/images/log_out.png"> Р’С‹Р№С‚Рё</a></li>
         </ul>
     </nav>
 

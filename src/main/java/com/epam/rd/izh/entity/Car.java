@@ -2,17 +2,15 @@ package com.epam.rd.izh.entity;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
 public class Car {
 
     private Long id;
     private String brand;
     private String model;
-    private BigDecimal price;
-    private Category category;
-    private byte[] image;
+    private Long price;
+    private Long categoryId;
+    private String image;
 
     public Car id(Long id) {
         this.setId(id);
@@ -29,17 +27,17 @@ public class Car {
         return this;
     }
 
-    public Car price(BigDecimal price) {
+    public Car price(Long price) {
         this.setPrice(price);
         return this;
     }
 
-    public Car category(Category category) {
-        this.setCategory(category);
+    public Car categoryId(Long categoryId) {
+        this.setCategoryId(categoryId);
         return this;
     }
 
-    public Car image(byte[] image) {
+    public Car image(String image) {
         this.setImage(image);
         return this;
     }

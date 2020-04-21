@@ -16,6 +16,30 @@ public class CarRepository {
     @Autowired
     CarMapper carMapper;
 
+    public boolean saveCar(Car car) {
+        return jdbcTemplate.update(
+                "INSERT INTO t_cars(brand, model, price, category_id, image) VALUES(?, ?, ?, ?, ?)",
+                car.getBrand(),
+                car.getModel(),
+                car.getPrice(),
+                car.getCategoryId(),
+                car.getImage()
+        ) > 0;
+    }
+
+    public Car getCarByBrandAndModel(String brand, String model) {
+        List<Car> cars = jdbcTemplate.query(
+                "SELECT * FROM t_cars WHERE brand = ? AND model = ? LIMIT 1",
+                carMapper,
+                brand,
+                model
+        );
+        if (cars.isEmpty()) {
+            return null;
+        }
+        return cars.get(0);
+    }
+
     public List<Car> getAllCarsByCategoryId(Long categoryId) {
         return jdbcTemplate.query("SELECT * FROM t_cars WHERE category_id = ?", carMapper, categoryId);
     }

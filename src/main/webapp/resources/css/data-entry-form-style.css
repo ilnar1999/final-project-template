@@ -31,7 +31,6 @@
 .data-entry-form .text-box {
     width: 416px;
     font-size: 30px;
-    outline: none;
 }
 
 .data-entry-form .button {
@@ -43,7 +42,6 @@
     background-color: #666;
     color: #eee;
     margin-bottom: 20px;
-    outline: none;
 }
 
 .data-entry-form .button:hover{
@@ -52,9 +50,4 @@
 
 .data-entry-form .left-button {
     margin-right: 15px;
-}
-
-.data-entry-form .error {
-    color: red;
-    text-align: center;
 }

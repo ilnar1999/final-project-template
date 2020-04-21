@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="cp1251" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Регистрация</title>
+    <title>Р РµРіРёСЃС‚СЂР°С†РёСЏ</title>
+    <meta charset="UTF-8">
     <link rel="shortcut icon" href="/resources/images/logo.png">
     <link rel="stylesheet" contentType="text/css" href="/resources/css/style.css" >
     <link rel="stylesheet" contentType="text/css" href="/resources/css/data-entry-form-style.css" >
@@ -10,7 +11,7 @@
 <body>
 
 <header>
-    <h1>АВТОСАЛОН</h1>
+    <h1>РђР’РўРћРЎРђР›РћРќ</h1>
 </header>
 
 <section>
@@ -18,43 +19,43 @@
 
         <form class="data-entry-form" action="/registration/proceed" method="post">
 
-            <h3>Регистрация</h3>
+            <h3>Р РµРіРёСЃС‚СЂР°С†РёСЏ</h3>
             <hr>
 
             <div class="area">
-                <label>ФИО:</label><br>
+                <label>Р¤РРћ:</label><br>
                 <input name="fullName" class="text-box" size="18" required maxlength="50">
             </div>
 
             <div class="area">
-                <label>Дата рождения:</label><br>
+                <label>Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:</label><br>
                 <input name="dateOfBirthday" class="text-box" size="18" required type="date">
             </div>
 
             <div class="area">
-                <label>Логин:</label><br>
+                <label>Р›РѕРіРёРЅ:</label><br>
                 <input name="login" class="text-box" size="18" required maxlength="30"
-                title="Логин должен содержать латинские буквы и/или цифры. Минимальная длина логина - 5 символов.">
+                title="Р›РѕРіРёРЅ РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ Р»Р°С‚РёРЅСЃРєРёРµ Р±СѓРєРІС‹ Рё/РёР»Рё С†РёС„СЂС‹. РњРёРЅРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР° Р»РѕРіРёРЅР° - 5 СЃРёРјРІРѕР»РѕРІ.">
                 <div class="error">${error_login_placeholder}</div>
             </div>
 
             <div class="area">
-                <label>Пароль:</label><br>
+                <label>РџР°СЂРѕР»СЊ:</label><br>
                 <input name="password" class="text-box" type="password" class="text" required
-                title="Пароль должен содержать латинские буквы и/или цифры. Минимальная длина пароля - 5 символов.">
+                title="РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ Р»Р°С‚РёРЅСЃРєРёРµ Р±СѓРєРІС‹ Рё/РёР»Рё С†РёС„СЂС‹. РњРёРЅРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР° РїР°СЂРѕР»СЏ - 5 СЃРёРјРІРѕР»РѕРІ.">
                 <div class="error">${error_password_placeholder}</div>
             </div>
 
             <div class="area">
-                <label>Подтвердите пароль:</label><br>
+                <label>РџРѕРґС‚РІРµСЂРґРёС‚Рµ РїР°СЂРѕР»СЊ:</label><br>
                 <input name="passwordConfirm" class="text-box" type="password" class="text" required
-                title="Подтвердите пароль">
+                title="РџРѕРґС‚РІРµСЂРґРёС‚Рµ РїР°СЂРѕР»СЊ">
                 <div class="error">${error_passwordConfirm_placeholder}</div>
             </div>
 
             <div class="area">
-                <input type="submit" class="button left-button" value="Зарегистрироваться">
-                <a href="/login"><input type="button" class="button" value="Назад"></a>
+                <input type="submit" class="button left-button" value="Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ">
+                <a href="/login"><input type="button" class="button" value="РќР°Р·Р°Рґ"></a>
             </div>
 
         </form>

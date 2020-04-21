@@ -17,9 +17,10 @@ public class CategoryMapper implements RowMapper<Category> {
 
     @Override
     public Category mapRow(ResultSet resultSet, int i) throws SQLException {
+        Long id = resultSet.getLong("id");
         return new Category()
-                .id(resultSet.getLong("id"))
+                .id(id)
                 .name(resultSet.getString("name"))
-                .cars(carService.getAllCarsByCategoryId(resultSet.getLong("category_id")));
+                .cars(carService.getAllCarsByCategoryId(id));
     }
 }

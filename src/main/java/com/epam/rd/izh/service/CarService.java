@@ -13,6 +13,13 @@ public class CarService {
     @Autowired
     CarRepository carRepository;
 
+    public boolean saveCar(Car car) {
+        if (carRepository.getCarByBrandAndModel((car.getBrand()), car.getModel()) != null) {
+            return false;
+        }
+        return carRepository.saveCar(car);
+    }
+
     public List<Car> getAllCarsByCategoryId(Long categoryId) {
         return carRepository.getAllCarsByCategoryId(categoryId);
     }

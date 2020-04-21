@@ -37,3 +37,46 @@ footer {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
+#dark-background {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+a.close {
+    cursor: pointer;
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    float: right;
+    font-size: 40px;
+    text-decoration: none;
+    color: #555;
+    text-align: center;
+}
+
+h3 {
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+div.error {
+    color: red;
+    text-align: center;
+}
+
+.button {
+    cursor: pointer;
+}

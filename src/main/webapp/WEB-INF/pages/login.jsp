@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="cp1251" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <html>
 <head>
-    <title>Sign up</title>
+    <title>РђРІС‚РѕСЂРёР·Р°С†РёСЏ</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/resources/images/logo.png">
     <link rel="stylesheet" contentType="text/css" href="${contextPath}/resources/css/style.css">
@@ -13,7 +13,7 @@
 <body>
 
 <header>
-    <h1>АВТОСАЛОН</h1>
+    <h1>РђР’РўРћРЎРђР›РћРќ</h1>
 </header>
 
 <section>
@@ -21,24 +21,24 @@
 
         <form class="data-entry-form" action="/login/process" method="post">
 
-            <h3>Авторизация</h3>
+            <h3>РђРІС‚РѕСЂРёР·Р°С†РёСЏ</h3>
             <hr>
 
             <div class="error">${error_login_placeholder}</div>
 
             <div class="area">
-                <label>Логин:</label><br>
+                <label>Р›РѕРіРёРЅ:</label><br>
                 <input name="login" class="text-box" size="18" required><br>
             </div>
 
             <div class="area">
-                <label>Пароль:</label><br>
+                <label>РџР°СЂРѕР»СЊ:</label><br>
                 <input name="password" class="text-box" type="password" class="text" required><br>
             </div>
 
             <div class="area">
-                <input type="submit" class="button left-button" value="Войти">
-                <a href="/registration"><input type="button" class="button" value="Регистрация"></a>
+                <input type="submit" class="button left-button" value="Р’РѕР№С‚Рё">
+                <a href="/registration"><input type="button" class="button" value="Р РµРіРёСЃС‚СЂР°С†РёСЏ"></a>
             </div>
 
         </form>

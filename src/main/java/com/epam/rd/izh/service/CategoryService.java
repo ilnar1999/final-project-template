@@ -21,4 +21,19 @@ public class CategoryService {
         return categoryRepository.getCategoryById(id);
     }
 
+    public Category getCategoryByName(String name) {
+        return categoryRepository.getCategoryByName(name);
+    }
+
+    public boolean saveCategoryByName(String name) {
+        if (getCategoryByName(name) != null) {
+            return false;
+        }
+        return categoryRepository.saveCategoryByName(name);
+    }
+
+    public boolean deleteCategoryById(Long id) {
+        return categoryRepository.deleteCategoryById(id);
+    }
+
 }
