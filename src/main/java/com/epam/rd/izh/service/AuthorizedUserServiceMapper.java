@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-
 @Service
 public class AuthorizedUserServiceMapper {
 
@@ -20,7 +18,7 @@ public class AuthorizedUserServiceMapper {
 
         return new AuthorizedUser()
                 .fullName(registeredUser.getFullName())
-                .dateOfBirthday(LocalDate.parse(registeredUser.getDateOfBirthday()))
+                .dateOfBirthday(registeredUser.getDateOfBirthday())
                 .login(registeredUser.getLogin())
                 .password(encoder.encode(registeredUser.getPassword()))
                 .roles(roleService.getAllRolesByNames("User"));

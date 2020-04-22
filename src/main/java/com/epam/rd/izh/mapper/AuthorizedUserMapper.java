@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 
 @Component
 public class AuthorizedUserMapper implements RowMapper<AuthorizedUser> {
@@ -21,7 +22,7 @@ public class AuthorizedUserMapper implements RowMapper<AuthorizedUser> {
         return new AuthorizedUser()
                 .id(id)
                 .fullName(resultSet.getString("full_name"))
-                .dateOfBirthday(resultSet.getDate("date_of_birthday").toLocalDate())
+                .dateOfBirthday(resultSet.getDate("date_of_birthday").toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))
                 .login(resultSet.getString("login"))
                 .password(resultSet.getString("password"))
                 .roles(roleService.getAllRolesByUserId(id));

@@ -23,4 +23,8 @@ public class CarService {
     public List<Car> getAllCarsByCategoryId(Long categoryId) {
         return carRepository.getAllCarsByCategoryId(categoryId);
     }
+
+    public boolean deleteCarById(Long id) {
+        return carRepository.deleteCarById(id);
+    }
 }

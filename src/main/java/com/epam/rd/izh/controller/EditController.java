@@ -38,8 +38,17 @@ public class EditController {
     }
 
     @PostMapping("/edit/create-car")
-    public String createCar(@ModelAttribute("createdCar") CreatedCar createdCar) {
-        carService.saveCar(carMapper.mapCreatedCarToCar(createdCar));
+    public String createCar(@ModelAttribute("createdCar") CreatedCar createdCar, RedirectAttributes redirectAttributes) {
+        if (!carService.saveCar(carMapper.mapCreatedCarToCar(createdCar))) {
+            redirectAttributes.addAttribute("error_car_exists", "Автомобиль с такими производителем и моделью уже существует");
+        }
+
+        return "redirect:/";
+    }
+
+    @PostMapping("/edit/delete-car")
+    public String deleteCar(@RequestParam(name = "car-id") Long id) {
+        carService.deleteCarById(id);
 
         return "redirect:/";
     }

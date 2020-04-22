@@ -11,7 +11,7 @@ public class AuthorizedUser {
 
     private Long id;
     private String fullName;
-    private LocalDate dateOfBirthday;
+    private String dateOfBirthday;
     private String login;
     private String password;
     private Set<Role> roles;
@@ -26,7 +26,7 @@ public class AuthorizedUser {
         return this;
     }
 
-    public AuthorizedUser dateOfBirthday(LocalDate dateOfBirthday) {
+    public AuthorizedUser dateOfBirthday(String dateOfBirthday) {
         this.setDateOfBirthday(dateOfBirthday);
         return this;
     }

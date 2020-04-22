@@ -175,3 +175,26 @@ form input.button:hover {
 #car-information #delete-car-button:hover {
     background-color: #500;
 }
+
+
+
+
+
+#delete-car {
+    width: 500px;
+}
+
+#delete-car p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#delete-car div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#delete-car input.button {
+    margin: 0px 2px;
+    width: 200px;
+}

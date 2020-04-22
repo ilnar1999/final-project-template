@@ -16,10 +16,15 @@ public class IndexController {
     CategoryService categoryService;
 
     @GetMapping("/")
-    public String index(@RequestParam(name = "error_category_name", required = false) String categoryNameError, Authentication authentication, Model model) {
+    public String index(@RequestParam(name = "error_category_name", required = false) String ErrorCategoryName,
+                        @RequestParam(name = "error_car_exists", required = false) String ErrorCarExists,
+                        Authentication authentication, Model model) {
 
-        if (categoryNameError != null) {
+        if (ErrorCategoryName != null) {
             model.addAttribute("error_category_name", "Категория с таким названием уже существует");
+        }
+        if (ErrorCarExists != null) {
+            model.addAttribute("error_car_exists", "Автомобиль с такими производителем и моделью уже существует");
         }
         if (!model.containsAttribute("createdCar")) {
             model.addAttribute("createdCar", new CreatedCar());
