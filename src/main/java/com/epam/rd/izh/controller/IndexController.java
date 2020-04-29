@@ -18,6 +18,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(@RequestParam(name = "error_category_name", required = false) String ErrorCategoryName,
                         @RequestParam(name = "error_car_exists", required = false) String ErrorCarExists,
+                        @RequestParam(name = "category_id", required = false) String categoryId,
                         Authentication authentication, Model model) {
 
         if (ErrorCategoryName != null) {
@@ -25,6 +26,7 @@ public class IndexController {
         }
         if (ErrorCarExists != null) {
             model.addAttribute("error_car_exists", "Автомобиль с такими производителем и моделью уже существует");
+            model.addAttribute("category_id", categoryId);
         }
         if (!model.containsAttribute("createdCar")) {
             model.addAttribute("createdCar", new CreatedCar());

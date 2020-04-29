@@ -138,6 +138,7 @@
                                 <option value="/resources/images/sedan.png">Седан</option>
                                 <option value="/resources/images/sport_car.png">Спорт кар</option>
                                 <option value="/resources/images/suv.png">Внедорожник</option>
+                                <option value="/resources/images/cabriolet.png">Кабриолет</option>
                             </select>
                         </td>
                         <td width="190px">Производитель: </td>
@@ -217,6 +218,13 @@
             </div>
 
         </form>
+
+        <script>
+            hideAllPopUps();
+            if ("${category_id}") {
+                showCreateCarForm(${category_id});
+            }
+        </script>
 
     </div>
 

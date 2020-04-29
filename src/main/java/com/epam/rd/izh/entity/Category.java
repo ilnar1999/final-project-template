@@ -2,16 +2,14 @@ package com.epam.rd.izh.entity;
 
 import lombok.Data;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Data
 public class Category {
 
     private Long id;
     private String name;
-    private Set<Car> cars;
+    private List<Car> cars;
 
     public Category id(Long id) {
         this.setId(id);
@@ -23,8 +21,8 @@ public class Category {
         return this;
     }
 
-    public Category cars(Collection<Car> cars) {
-        this.cars = new HashSet<>(cars);
+    public Category cars(List<Car> cars) {
+        this.cars = new ArrayList<>(cars);
         return this;
     }
 }

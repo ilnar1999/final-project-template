@@ -41,7 +41,7 @@ public class CarRepository {
     }
 
     public List<Car> getAllCarsByCategoryId(Long categoryId) {
-        return jdbcTemplate.query("SELECT * FROM t_cars WHERE category_id = ?", carMapper, categoryId);
+        return jdbcTemplate.query("SELECT * FROM t_cars WHERE category_id = ? ORDER BY id", carMapper, categoryId);
     }
 
     public boolean deleteCarById(Long id) {

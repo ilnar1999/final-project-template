@@ -48,9 +48,4 @@ public class AuthorizedUserService {
         }
         return false;
     }
-
-    public List<AuthorizedUser> filterUsersBySubstringOfLogin(List<AuthorizedUser> users, String substringOfLogin) {
-        users.removeIf(user -> (!user.getLogin().contains(substringOfLogin)));
-        return users;
-    }
 }

@@ -1,14 +1,10 @@
 $(document).ready(function() {
-    hideAllPopUps();
     if (document.getElementById('edit-button')) {
         enableEditMod();
     }
 
     if (document.getElementById("error-category-name").textContent != "") {
         showCreateCategoryForm();
-    }
-    if (document.getElementById("error-car-exists").textContent != "") {
-        showCreateCarForm();
     }
 });
 

@@ -41,6 +41,7 @@ public class EditController {
     public String createCar(@ModelAttribute("createdCar") CreatedCar createdCar, RedirectAttributes redirectAttributes) {
         if (!carService.saveCar(carMapper.mapCreatedCarToCar(createdCar))) {
             redirectAttributes.addAttribute("error_car_exists", "Автомобиль с такими производителем и моделью уже существует");
+            redirectAttributes.addAttribute("category_id", createdCar.getCategoryId());
         }
 
         return "redirect:/";
