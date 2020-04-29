@@ -17,10 +17,6 @@ public class CategoryService {
         return categoryRepository.getAllCategories();
     }
 
-    public Category getCategoryById(Long id) {
-        return categoryRepository.getCategoryById(id);
-    }
-
     public Category getCategoryByName(String name) {
         return categoryRepository.getCategoryByName(name);
     }

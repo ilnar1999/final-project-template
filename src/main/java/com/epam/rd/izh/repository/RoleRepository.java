@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -24,10 +23,6 @@ public class RoleRepository  {
              return null;
         }
         return roles.get(0);
-    }
-
-    public List<Role> getAllRolesByNames(String... names) {
-        return jdbcTemplate.query("SELECT * FROM t_roles WHERE name IN (?)", names, roleMapper);
     }
 
     public List<Role> getAllRolesByUserId(Long userId) {

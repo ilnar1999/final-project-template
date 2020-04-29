@@ -20,14 +20,6 @@ public class CategoryRepository {
         return jdbcTemplate.query("SELECT * FROM t_categories", categoryMapper);
     }
 
-    public Category getCategoryById(Long id) {
-        List<Category> categories = jdbcTemplate.query("SELECT * FROM t_categories WHERE id = ? LIMIT 1", categoryMapper, id);
-        if (categories.isEmpty()) {
-            return null;
-        }
-        return categories.get(0);
-    }
-
     public Category getCategoryByName(String name) {
         List<Category> categories = jdbcTemplate.query("SELECT * FROM t_categories WHERE name = ? LIMIT 1", categoryMapper, name);
         if (categories.isEmpty()) {

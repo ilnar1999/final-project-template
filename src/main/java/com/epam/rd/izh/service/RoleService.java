@@ -17,10 +17,6 @@ public class RoleService {
         return roleRepository.getRoleByName(name);
     }
 
-    public List<Role> getAllRolesByNames(String... names) {
-        return roleRepository.getAllRolesByNames(names);
-    }
-
     public List<Role> getAllRolesByUserId(Long id) {
         return roleRepository.getAllRolesByUserId(id);
     }

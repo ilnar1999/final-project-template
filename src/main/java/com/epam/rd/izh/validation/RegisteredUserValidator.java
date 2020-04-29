@@ -21,11 +21,5 @@ public class RegisteredUserValidator {
         if (!registeredUser.getPassword().equals(registeredUser.getPasswordConfirm())) {
             bindingResult.addError(new ObjectError("error_passwordConfirm_placeholder", "Пароли не совпадают"));
         }
-        if (registeredUser.getLogin().length() < 5) {
-            bindingResult.addError(new ObjectError("error_login_placeholder", "Длина логина должна быть не меньше 5 символов"));
-        }
-        if (registeredUser.getPassword().length() < 5) {
-            bindingResult.addError(new ObjectError("error_password_placeholder", "Длина пароля должна быть не меньше 5 символов"));
-        }
     }
 }
