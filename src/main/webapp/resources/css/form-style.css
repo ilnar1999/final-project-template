@@ -26,8 +26,7 @@ form input.button:hover {
 }
 
 
-
-
+/* форма добавления категории */
 
 #create-category {
     width: 500px;
@@ -51,8 +50,7 @@ form input.button:hover {
 }
 
 
-
-
+/* форма удаления категории */
 
 #delete-category {
     width: 500px;
@@ -74,7 +72,7 @@ form input.button:hover {
 }
 
 
-
+/* форма добавления автомобиля */
 
 #create-car {
     width: 900px;
@@ -122,9 +120,7 @@ form input.button:hover {
 }
 
 
-
-
-
+/* форма с информацией об автомобиле */
 
 #car-information {
     width: 900px;
@@ -177,8 +173,7 @@ form input.button:hover {
 }
 
 
-
-
+/* форма удаления автомобиля */
 
 #delete-car {
     width: 500px;
@@ -195,6 +190,50 @@ form input.button:hover {
 }
 
 #delete-car input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
+
+
+/* форма удаления пользователя */
+
+#delete-user-form {
+    width: 500px;
+}
+
+#delete-user-form p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#delete-user-form div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#delete-user-form input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
+
+
+/* форма изменения прав пользователя */
+
+#change-user-role-form {
+    width: 500px;
+}
+
+#change-user-role-form p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#change-user-role-form div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#change-user-role-form input.button {
     margin: 0px 2px;
     width: 200px;
 }

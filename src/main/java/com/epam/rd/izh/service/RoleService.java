@@ -13,6 +13,10 @@ public class RoleService {
     @Autowired
     RoleRepository roleRepository;
 
+    public Role getRoleByName(String name) {
+        return roleRepository.getRoleByName(name);
+    }
+
     public List<Role> getAllRolesByNames(String... names) {
         return roleRepository.getAllRolesByNames(names);
     }

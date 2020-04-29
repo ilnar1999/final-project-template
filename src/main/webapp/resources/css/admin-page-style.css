@@ -16,4 +16,16 @@ td {
     border: 1px black solid;
     padding: 1px;
     height: 28px;
+    word-break: break-all;
+}
+
+input.role-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+#search-form {
+    margin: 25px 50px;
+    background: none;
+    box-shadow: none;
 }

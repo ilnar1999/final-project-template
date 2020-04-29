@@ -25,7 +25,7 @@ public class AuthorizedUserRepository {
         updatedRows += jdbcTemplate.update(
                 "INSERT INTO t_users(full_name, date_of_birthday, login, password) VALUES (?, ?, ?, ?)",
                 user.getFullName(),
-                LocalDate.parse(user.getDateOfBirthday(), DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                LocalDate.parse(user.getDateOfBirthday(), DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                 user.getLogin(),
                 user.getPassword()
         );
@@ -44,8 +44,9 @@ public class AuthorizedUserRepository {
         return users.get(0);
     }
 
-    public List<AuthorizedUser> getAllUsers() {
-        return jdbcTemplate.query("SELECT * FROM t_users", userMapper);
+    public List<AuthorizedUser> getAllUsersBySubstringOfLogin(String substringOfLogin) {
+        String query = "SELECT * FROM t_users WHERE login LIKE '%" + substringOfLogin + "%'";
+        return jdbcTemplate.query(query, userMapper);
     }
 
     public boolean saveUserRoles(AuthorizedUser user, Role role) {
@@ -58,5 +59,21 @@ public class AuthorizedUserRepository {
 
     public boolean deleteUserById(Long id) {
         return jdbcTemplate.update("DELETE FROM t_users WHERE id = ?", id) > 0;
+    }
+
+    public boolean addRoleToUserByUserIdAndRoleId(Long userId, Long roleId) {
+        return jdbcTemplate.update(
+                "INSERT INTO t_users_roles(user_id, role_id) VALUES (?, ?)",
+                userId,
+                roleId
+        ) > 0;
+    }
+
+    public boolean deleteUserRoleByUserIdAndRoleId(Long userId, Long roleId) {
+        return jdbcTemplate.update(
+                "DELETE FROM t_users_roles WHERE user_id = ? AND role_id = ?",
+                userId,
+                roleId
+        ) > 0;
     }
 }

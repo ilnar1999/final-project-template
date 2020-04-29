@@ -26,7 +26,9 @@
     <nav class="nav">
         <ul>
             <li><a href="/">Каталог</a></li>
-            <li><a href="/admin">Пользователи</a></li>
+            <sec:authorize access="hasAuthority('Admin')">
+                <li><a href="/admin">Пользователи</a></li>
+            </sec:authorize>
             <li><a onclick="">О нас</a></li>
             <li class="right"><a href="/logout"><img class="nav" src="/resources/images/log_out.png"> Выйти</a></li>
             <li class="right"><p>${authorized_user_name}</p></li>

@@ -1,7 +1,6 @@
 package com.epam.rd.izh.entity;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +14,8 @@ public class AuthorizedUser {
     private String login;
     private String password;
     private Set<Role> roles;
+    private boolean isManager;
+    private boolean isAdmin;
 
     public AuthorizedUser id(Long id) {
         this.setId(id);
@@ -43,6 +44,16 @@ public class AuthorizedUser {
 
     public AuthorizedUser roles(Collection<Role> roles) {
         this.roles = new HashSet<>(roles);
+        return this;
+    }
+
+    public AuthorizedUser isManager(boolean isManager) {
+        this.isManager = isManager;
+        return this;
+    }
+
+    public AuthorizedUser isAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
         return this;
     }
 }

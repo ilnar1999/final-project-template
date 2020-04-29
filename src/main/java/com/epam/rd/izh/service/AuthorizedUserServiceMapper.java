@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+
 @Service
 public class AuthorizedUserServiceMapper {
 
     @Autowired
     PasswordEncoder encoder;
-    @Autowired
-    RoleService roleService;
 
     public AuthorizedUser mapRegisteredUserToAuthorizedUser(RegisteredUser registeredUser) {
 
@@ -21,6 +21,6 @@ public class AuthorizedUserServiceMapper {
                 .dateOfBirthday(registeredUser.getDateOfBirthday())
                 .login(registeredUser.getLogin())
                 .password(encoder.encode(registeredUser.getPassword()))
-                .roles(roleService.getAllRolesByNames("User"));
+                .roles(new HashSet<>());
     }
 }
