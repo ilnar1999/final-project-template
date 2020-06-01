@@ -5,7 +5,7 @@
 -- Dumped from database version 12.2
 -- Dumped by pg_dump version 12.2
 
--- Started on 2020-05-01 15:55:41
+-- Started on 2020-06-01 22:07:56
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -261,17 +261,15 @@ ALTER TABLE ONLY public.t_users_roles ALTER COLUMN id SET DEFAULT nextval('publi
 -- Data for Name: t_cars; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.t_cars VALUES (52, 'Автомобиль1', 'Автомобиль1', 37, '/resources/images/sedan.png
-', 50000);
-INSERT INTO public.t_cars VALUES (53, 'Автомобиль2', 'Автомобиль2', 38, '/resources/images/cabriolet.png', 80000);
-INSERT INTO public.t_cars VALUES (54, 'Автомобиль3', 'Автомобиль3', 39, '/resources/images/sport_car.png', 100000);
-INSERT INTO public.t_cars VALUES (55, 'Автомобиль4', 'Автомобиль4', 37, '/resources/images/suv.png', 30000);
-INSERT INTO public.t_cars VALUES (56, 'Автомобиль5', 'Автомобиль5', 37, '/resources/images/cabriolet.png
-', 85000);
-INSERT INTO public.t_cars VALUES (57, 'Автомобиль6', 'Автомобиль6', 37, '/resources/images/sport_car.png
-', 73000);
-INSERT INTO public.t_cars VALUES (58, 'Автомобиль7', 'Автомобиль7', 39, '/resources/images/sedan.png
-', 10000);
+COPY public.t_cars (id, brand, model, category_id, image, price) FROM stdin;
+53	Автомобиль2	Автомобиль2	38	/resources/images/cabriolet.png	80000
+54	Автомобиль3	Автомобиль3	39	/resources/images/sport_car.png	100000
+55	Автомобиль4	Автомобиль4	37	/resources/images/suv.png	30000
+52	Автомобиль1	Автомобиль1	37	/resources/images/sedan.png	50000
+56	Автомобиль5	Автомобиль5	37	/resources/images/cabriolet.png	85000
+57	Автомобиль6	Автомобиль6	37	/resources/images/sport_car.png	73000
+58	Автомобиль7	Автомобиль7	39	/resources/images/sedan.png	10000
+\.
 
 
 --
@@ -280,9 +278,11 @@ INSERT INTO public.t_cars VALUES (58, 'Автомобиль7', 'Автомоби
 -- Data for Name: t_categories; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.t_categories VALUES (37, 'Категория1');
-INSERT INTO public.t_categories VALUES (38, 'Категория2');
-INSERT INTO public.t_categories VALUES (39, 'Категория3');
+COPY public.t_categories (id, name) FROM stdin;
+37	Категория1
+38	Категория2
+39	Категория3
+\.
 
 
 --
@@ -291,8 +291,10 @@ INSERT INTO public.t_categories VALUES (39, 'Категория3');
 -- Data for Name: t_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.t_roles VALUES (2, 'Manager');
-INSERT INTO public.t_roles VALUES (1, 'Admin');
+COPY public.t_roles (id, name) FROM stdin;
+2	Manager
+1	Admin
+\.
 
 
 --
@@ -301,8 +303,10 @@ INSERT INTO public.t_roles VALUES (1, 'Admin');
 -- Data for Name: t_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.t_users VALUES (21, 'admin', '1993-02-18', 'admin', '$2a$10$PQCJJwz9AQ16MQ8LwgEY9.mi.IEsmo.D6XjETezvuhtbQwlbk3uda');
-INSERT INTO public.t_users VALUES (22, 'manager', '2000-07-29', 'manager', '$2a$10$nuYHVta336uH8.ljnID6P.3a3wMfi.dAdSncj1Scus6H.WFP8rwVC');
+COPY public.t_users (id, full_name, date_of_birthday, login, password) FROM stdin;
+21	admin	1993-02-18	admin	$2a$10$PQCJJwz9AQ16MQ8LwgEY9.mi.IEsmo.D6XjETezvuhtbQwlbk3uda
+22	manager	2000-07-29	manager	$2a$10$nuYHVta336uH8.ljnID6P.3a3wMfi.dAdSncj1Scus6H.WFP8rwVC
+\.
 
 
 --
@@ -311,8 +315,10 @@ INSERT INTO public.t_users VALUES (22, 'manager', '2000-07-29', 'manager', '$2a$
 -- Data for Name: t_users_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.t_users_roles VALUES (40, 21, 1);
-INSERT INTO public.t_users_roles VALUES (42, 22, 2);
+COPY public.t_users_roles (id, user_id, role_id) FROM stdin;
+40	21	1
+44	22	2
+\.
 
 
 --
@@ -357,7 +363,7 @@ SELECT pg_catalog.setval('public.t_user_id_seq', 22, true);
 -- Name: t_users_roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.t_users_roles_id_seq', 42, true);
+SELECT pg_catalog.setval('public.t_users_roles_id_seq', 46, true);
 
 
 --
@@ -477,7 +483,7 @@ ALTER TABLE ONLY public.t_users_roles
     ADD CONSTRAINT t_users_roles_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.t_users(id) ON UPDATE CASCADE ON DELETE CASCADE NOT VALID;
 
 
--- Completed on 2020-05-01 15:55:41
+-- Completed on 2020-06-01 22:07:57
 
 --
 -- PostgreSQL database dump complete
