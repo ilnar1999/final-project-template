@@ -1,0 +1,46 @@
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 25px;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li.right {
+    float: right;
+}
+
+
+
+.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 12px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #111;
+}
+
+.nav li.right {
+    float: right;
+}
+
+img.nav {
+    width: 20px;
+    height: 20px;
+}
+
+.nav p {
+    color: white;
+    text-align: center;
+    padding: 15px 12px;
+    margin: 0px;
+}

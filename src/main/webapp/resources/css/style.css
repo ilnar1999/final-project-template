@@ -1,0 +1,84 @@
+* {
+    font-family: arial;
+}
+
+header {
+    background-color: #555;
+    color: #FFE573;
+    padding: 2px;
+    text-align: center;
+    letter-spacing: 10px;
+    text-shadow: 0px 0px 5px orange;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+body {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-image: url("/resources/images/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+footer {
+    background-color: #555;
+    color: #ddd;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 2px 2px 2px gray;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#dark-background {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+a.close {
+    cursor: pointer;
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    float: right;
+    font-size: 40px;
+    text-decoration: none;
+    color: #555;
+    text-align: center;
+}
+
+h3 {
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+div.error {
+    color: red;
+    text-align: center;
+}
+
+.button {
+    cursor: pointer;
+}

@@ -1,0 +1,239 @@
+form {
+    margin: 10% auto auto auto;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #555;
+}
+
+form h3 {
+    padding-top: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+    margin: 0px;
+}
+
+form input.button {
+    margin-top: 15px;
+    height: 50px;
+    font-size: 25px;
+    background-color: #555;
+    color: #eee;
+}
+
+form input.button:hover {
+    background-color: #333;
+}
+
+
+/* форма добавления категории */
+
+#create-category {
+    width: 500px;
+}
+
+#create-category div.input-area {
+    padding: 50px 100px 50px 100px;
+}
+
+#create-category label {
+    font-size: 25px;
+}
+
+#create-category input.text {
+    width: 296px;
+    font-size: 25px;
+}
+
+#create-category input.button {
+    width: 300px;
+}
+
+
+/* форма удаления категории */
+
+#delete-category {
+    width: 500px;
+}
+
+#delete-category p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#delete-category div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#delete-category input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
+
+
+/* форма добавления автомобиля */
+
+#create-car {
+    width: 900px;
+}
+
+#create-car p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#create-car div.input-area {
+    padding: 30px 50px 30px 50px;
+}
+
+#create-car input.button {
+    margin: auto 5px auto 5px;
+    width: 300px;
+}
+
+#create-car table {
+    width: 800px;
+    height: 200px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+#create-car input.text-box {
+    font-size: 25px;
+    width: 270px;
+}
+
+#create-car div.button-area {
+    margin: 0px 87px;
+    width: 625px;
+}
+
+#create-car img {
+    width: 280px;
+}
+
+#create-car select {
+    font-size: 100%;
+    width: 280px;
+}
+
+
+/* форма с информацией об автомобиле */
+
+#car-information {
+    width: 900px;
+}
+
+#car-information p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#car-information div.input-area {
+    padding: 30px 50px 30px 50px;
+}
+
+#car-information input.button {
+    margin: 5px;
+    width: 300px;
+}
+
+#car-information table {
+    width: 800px;
+    height: 200px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+#car-information input.text-box {
+    font-size: 25px;
+    width: 270px;
+}
+
+#car-information div.button-area {
+    margin-left: 87px;
+    width: 625px;
+}
+
+#car-information img {
+    width: 400px;
+    height: 225px;
+}
+
+#car-information #delete-car-button {
+    background-color: #800;
+    width: 615px;
+}
+
+#car-information #delete-car-button:hover {
+    background-color: #500;
+}
+
+
+/* форма удаления автомобиля */
+
+#delete-car {
+    width: 500px;
+}
+
+#delete-car p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#delete-car div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#delete-car input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
+
+
+/* форма удаления пользователя */
+
+#delete-user-form {
+    width: 500px;
+}
+
+#delete-user-form p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#delete-user-form div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#delete-user-form input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
+
+
+/* форма изменения прав пользователя */
+
+#change-user-role-form {
+    width: 500px;
+}
+
+#change-user-role-form p {
+    font-size: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#change-user-role-form div.input-area {
+    padding: 10px 43px 30px 43px;
+}
+
+#change-user-role-form input.button {
+    margin: 0px 2px;
+    width: 200px;
+}
